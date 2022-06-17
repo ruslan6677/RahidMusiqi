@@ -114,7 +114,7 @@ async def vsong(client, message):
     except Exception as e:
         return await msg.edit(f"🚫 **Xəta:** {e}")
     preview = wget.download(thumbnail)
-    await msg.edit("📤 **video yüklənir...**")
+    await msg.edit("📤 **Video yüklənir...**")
     await message.reply_video(
         file_name,
         duration=int(ytdl_data["duration"]),
