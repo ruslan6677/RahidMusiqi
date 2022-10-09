@@ -101,7 +101,7 @@ async def cls(_, query: CallbackQuery):
                    & ~filters.via_bot)
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 **Zəhmət olmasa gözləyin...**")
+    lel = await message.reply("**Musiqi axtarılır, Zəhmət olmasa gözləyin...**")
     
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -147,7 +147,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❌ Uzun videolar {DURATION_LIMIT} dəqiqəlik icazə verilmir!"
+                f"❌ Uzun  video {DURATION_LIMIT} dəqiqəlik icazə verilmir!"
             )
 
         file_name = get_file_name(audio)
@@ -221,15 +221,15 @@ async def play(_, message: Message):
                     ]
                 )
         if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"❌ Uzun videolar {DURATION_LIMIT} dəqiqəlik ucazə verilmir!")
+             await lel.edit(f"❌ Uzun video {DURATION_LIMIT} dəqiqəlik ucazə verilmir!")
              return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)     
         file_path = await converter.convert(youtube.download(url))
     else:
         if len(message.command) < 2:
-            return await lel.edit("🤔 **Dinləmək istədiyin mahnı nədir?**")
-        await lel.edit("🔎 **Zəhmət olmasa gözləyin...**")
+            return await lel.edit("Səsli söhbətdə musiqi dinləmək üçün ➡️ /play mahnı adı yazın❗**")
+        await lel.edit("**Musiqi axtarılır, Zəhmət olmasa gözləyin...**")
         query = message.text.split(None, 1)[1]
         # print(query)
         await lel.edit("🔄 **Səsə daxil olunur...**")
@@ -272,7 +272,7 @@ async def play(_, message: Message):
     )
         
         if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"❌ Uzun videolar {DURATION_LIMIT}  dəqiqəlik icazə verilmir!")
+             await lel.edit(f"❌ Uzun videolar {DURATION_LIMIT} dəqiqəlik icazə verilmir!")
              return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
