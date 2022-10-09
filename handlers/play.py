@@ -198,8 +198,8 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🚀 Support", url=f"https://t.me/Rahid_Support"),
-                InlineKeyboardButton("📣 Kanal", url=f"https://t.me/Rahid_44"),
+                InlineKeyboardButton("🤖 Digər Botlar", url=f"https://t.me/Rahid_44"),
+                InlineKeyboardButton("🆘 Support", url=f"https://t.me/Rahid_Support"),
             ],[
                 InlineKeyboardButton("📲 Bağla", callback_data="cls"),
             ],
@@ -229,10 +229,10 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await lel.edit("🤔 **Dinləmək istədiyin mahnı nədir?**")
-        await lel.edit("🔎 **Zəhmət olmasa Gözləyin...**")
+        await lel.edit("🔎 **Zəhmət olmasa gözləyin...**")
         query = message.text.split(None, 1)[1]
         # print(query)
-        await lel.edit("🔄 **Səsə daxil olunur...🔥**")
+        await lel.edit("🔄 **Səsə daxil olunur...**")
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
@@ -263,8 +263,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🚀 Support", url=f"https://t.me/Rahid_Support"),
-                InlineKeyboardButton("📣 Kanal", url=f"https://t.me/Rahid_44"),
+                InlineKeyboardButton("🤖 Digər Botlar", url=f"https://t.me/Rahid_44"),
+                InlineKeyboardButton("🆘 Support", url=f"https://t.me/Rahid_Support"),
             ],[
                 InlineKeyboardButton("📲 Bağla", callback_data="cls"),
             ],
@@ -286,7 +286,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png",
-        caption="**🎵 Mahnı Adı:** {}\n**🕒 Müddət:** {} min\n**👉 İstəyən:** {}\n\n**🚧 Hissə yeri:** {}".format(
+        caption="**🎵 Başlıq:** {}\n**🕒 Müddət:** {} min\n**👉 İstəyən:** {}\n\n**🚧 Növbə:** {}".format(
         title, duration, message.from_user.mention(), position
         ),
         reply_markup=keyboard)
@@ -306,7 +306,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**🎵 Mahnı Adı:** {}\n**🕒 Müddət:** {} min\n**👉 İstəyən:** {}\n\n**☑️ İndi hal-hazırda `{}`...**".format(
+        caption="**🎵 Başlıq:** {}\n**🕒 Müddət:** {} min\n**👉 İstəyən:** {}\n\n**☑️ İndi hal-hazırda `{}`...**".format(
         title, duration, message.from_user.mention(), message.chat.title
         ), )
         os.remove("final.png")
