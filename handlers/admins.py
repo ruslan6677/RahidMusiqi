@@ -55,7 +55,7 @@ async def stop(_, message: Message):
         await callsmusic.pytgcalls.leave_group_call(chat_id)
         await _.send_message(
             message.chat.id,
-            "✅ **Musiqi dayandırıldı\n\n❗ Asistan səsli söhbət bağlantısı kəsildi !**")
+            "**Musiqi dayandırıldı ❗**")
     
 @Client.on_message(command(["atla", "skip"]) & other_filters)
 @errors
@@ -66,7 +66,7 @@ async def atla(_, message: Message):
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        a = await message.reply_text("Musiqini keçmək üçün növbədə mahnı yoxdu!")
+        a = await message.reply_text("Musiqini keçmək üçün növbədə mahnı yoxdu !")
         await sleep(3)
         await a.delete()
     else:
@@ -84,7 +84,7 @@ async def atla(_, message: Message):
                 ),
             )
             
-        a = await message.reply_text("➡️ ** Növbəti mahnıya keçdi.**")
+        a = await message.reply_text("➡️ ** Növbəti mahnıya keçdi**")
         await sleep(3)
         await a.delete()
 
@@ -101,9 +101,9 @@ async def authenticate(client, message):
         new_admins = admins[message.chat.id]
         new_admins.append(message.reply_to_message.from_user.id)
         admins[message.chat.id] = new_admins
-        await message.reply("İstifadəçi yetkili.")
+        await message.reply("İstifadəçi yetkili")
     else:
-        await message.reply("✔ İstifadəçi onsuzda yetkilidir!")
+        await message.reply("✔ İstifadəçi onsuzda yetkilidir !")
 
 
 @Client.on_message(command("al") & other_filters)
@@ -111,15 +111,15 @@ async def authenticate(client, message):
 async def deautenticate(client, message):
     global admins
     if not message.reply_to_message:
-        await message.reply("✅ Yetkisini almaq üçün mesaj göndərin!")
+        await message.reply("✅ Yetkisini almaq üçün mesaj göndərin !")
         return
     if message.reply_to_message.from_user.id in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
         new_admins.remove(message.reply_to_message.from_user.id)
         admins[message.chat.id] = new_admins
-        await message.reply("İstifadəçi yetkisiz")
+        await message.reply("İstifadəçi yetkisizdi")
     else:
-        await message.reply("✅ yetkisi alındı!")
+        await message.reply("✅ yetkisi alındı !")
 
 
 # Sesli sohbet için 0-200 arası yeni komut eklenmiş oldu. 
