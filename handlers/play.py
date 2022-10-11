@@ -201,7 +201,7 @@ async def play(_, message: Message):
                 InlineKeyboardButton("🤖 Digər Botlar", url=f"https://t.me/Rahid_44"),
                 InlineKeyboardButton("🆘 Support", url=f"https://t.me/Rahid_Support"),
             ],[
-                InlineKeyboardButton("📲 Bağla", callback_data="cls"),
+                InlineKeyboardButton("🗑️ Bağla", callback_data="cls"),
             ],
         ]
     )
