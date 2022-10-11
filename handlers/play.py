@@ -127,7 +127,7 @@ async def play(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "**Salam Asistan bu qrupa musiqi oxumaq üçün qoşuldu**")
+                        message.chat.id, "**Salam Asistan bu qrupa səsli söhbətdə musiqi oxumaq üçün qoşuldu**")
 
                 except UserAlreadyParticipant:
                     pass
@@ -147,7 +147,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❌ Uzun  video {DURATION_LIMIT} dəqiqəlik icazə verilmir!"
+                f"❌ Uzun video {DURATION_LIMIT} dəqiqəlik icazə verilmir!"
             )
 
         file_name = get_file_name(audio)
@@ -161,7 +161,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="✨ Bağla",
+                        text="🗑️ Bağla",
                         callback_data="cls")
                    
                 ]
@@ -232,7 +232,7 @@ async def play(_, message: Message):
         await lel.edit("**Musiqi axtarılır, Zəhmət olmasa gözləyin...**")
         query = message.text.split(None, 1)[1]
         # print(query)
-        await lel.edit("🔄 **Səsə daxil olunur...**")
+        await lel.edit("✅ **Səsə daxil olunur...**")
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
@@ -255,7 +255,7 @@ async def play(_, message: Message):
                 
         except Exception as e:
             await lel.edit(
-                "❌ Mahnı tapılmadı\n\nBaşqa mahnı yoxlayın və ya mahnı adı düzgün deyil"
+                "❌ Mahnı tapılmadı\nBaşqa mahnı yoxlayın və ya mahnı adı düzgün deyil"
             )
             print(str(e))
             return
@@ -266,13 +266,13 @@ async def play(_, message: Message):
                 InlineKeyboardButton("🤖 Digər Botlar", url=f"https://t.me/Rahid_44"),
                 InlineKeyboardButton("🆘 Support", url=f"https://t.me/Rahid_Support"),
             ],[
-                InlineKeyboardButton("📲 Bağla", callback_data="cls"),
+                InlineKeyboardButton("🗑️ Bağla", callback_data="cls"),
             ],
         ]
     )
         
         if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"❌ Uzun videolar {DURATION_LIMIT} dəqiqəlik icazə verilmir!")
+             await lel.edit(f"❌ Uzun video {DURATION_LIMIT} dəqiqəlik icazə verilmir!")
              return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
