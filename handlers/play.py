@@ -161,7 +161,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="🗑️ Bağla",
+                        text="🗑️ Menynu Bağla",
                         callback_data="cls")
                    
                 ]
@@ -201,7 +201,7 @@ async def play(_, message: Message):
                 InlineKeyboardButton("🤖 Digər Botlar", url=f"https://t.me/Rahid_44"),
                 InlineKeyboardButton("🆘 Support", url=f"https://t.me/Rahid_Support"),
             ],[
-                InlineKeyboardButton("🗑️ Bağla", callback_data="cls"),
+                InlineKeyboardButton("🗑️ Menyunu Bağla", callback_data="cls"),
             ],
         ]
     )
@@ -266,7 +266,7 @@ async def play(_, message: Message):
                 InlineKeyboardButton("🤖 Digər Botlar", url=f"https://t.me/Rahid_44"),
                 InlineKeyboardButton("🆘 Support", url=f"https://t.me/Rahid_Support"),
             ],[
-                InlineKeyboardButton("🗑️ Bağla", callback_data="cls"),
+                InlineKeyboardButton("🗑️ Menyunu Bağla", callback_data="cls"),
             ],
         ]
     )
@@ -286,7 +286,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png",
-        caption="**🎵 Başlıq:** {}\n**🕒 Müddət:** {} min\n**👉 İstəyən:** {}\n\n**🚧 Növbə:** {}".format(
+        caption="**🎵 Başlıq:** {}\n**🕒 Müddət:** {} min\n**👤 İstəyən:** {}\n\n**🚧 Növbə:** {}".format(
         title, duration, message.from_user.mention(), position
         ),
         reply_markup=keyboard)
@@ -306,7 +306,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**🎵 Başlıq:** {}\n**🕒 Müddət:** {} min\n**👉 İstəyən:** {}\n\n**☑️ İndi hal-hazırda `{}`...**".format(
+        caption="**🎵 Başlıq:** {}\n**🕒 Müddət:** {} min\n**👤 İstəyən:** {} **".format(
         title, duration, message.from_user.mention(), message.chat.title
         ), )
         os.remove("final.png")
