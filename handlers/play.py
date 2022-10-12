@@ -101,7 +101,7 @@ async def cls(_, query: CallbackQuery):
                    & ~filters.via_bot)
 async def play(_, message: Message):
 
-    lel = await message.reply("**Musiqi axtarılır, Zəhmət olmasa gözləyin...**")
+    lel = await message.reply("✅ **Musiqi axtarılır, Zəhmət olmasa gözləyin...**")
     
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
