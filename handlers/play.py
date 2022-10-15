@@ -161,7 +161,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="🗑️ Menynu Bağla",
+                        text="🗑️ Bağla",
                         callback_data="cls")
                    
                 ]
@@ -198,10 +198,10 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🤖 Digər Botlar", url=f"https://t.me/Rahid_44"),
-                InlineKeyboardButton("🆘 Support", url=f"https://t.me/Rahid_Support"),
+                InlineKeyboardButton("✅ Qrupa Əlavə Et", url=f"https://t.me/Rahid_Music_Bot?startgroup=a"),
+                InlineKeyboardButton("🌐 Digər Botlar", url=f"https://t.me/Rahid_44"),
             ],[
-                InlineKeyboardButton("🗑️ Menyunu Bağla", callback_data="cls"),
+                InlineKeyboardButton("🗑️ Bağla", callback_data="cls"),
             ],
         ]
     )
@@ -263,10 +263,10 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🤖 Digər Botlar", url=f"https://t.me/Rahid_44"),
-                InlineKeyboardButton("🆘 Support", url=f"https://t.me/Rahid_Support"),
+                InlineKeyboardButton("✅ Qrupa Əlavə Et", url=f"https://t.me/Rahid_Music_Bot?startgroup=a"),
+                InlineKeyboardButton("🌐 Digər Botlar", url=f"https://t.me/Rahid_44"),
             ],[
-                InlineKeyboardButton("🗑️ Menyunu Bağla", callback_data="cls"),
+                InlineKeyboardButton("🗑️ Bağla", callback_data="cls"),
             ],
         ]
     )
